@@ -1,5 +1,3 @@
-## License
-
 # Vagrant-with-Ansible
 Actividad de la E.E Desarrollo de aplicaciones, en la cual se desarrollo la configuración de una máquina virtual a través de vagrant y de la ayuda de Ansible, para poder levantar un servidor; usando Ubuntu server 22.0.4
 Este repositorio contiene la configuración de una máquina virtual con **Vagrant** y **Ansible**, utilizada para levantar un servidor en **Ubuntu Server 22.04**.
