@@ -1,0 +1,67 @@
+- name: Configurar servidor web con Apache
+  hosts: all
+  become: yes
+
+  tasks:
+    - name: Actualizar paquetes
+      apt:
+        update_cache: yes
+
+    - name: Instalar Apache
+      apt:
+        name: apache2
+        state: present
+
+    - name: Habilitar e iniciar Apache
+      service:
+        name: apache2
+        state: started
+        enabled: yes
+
+    - name: Crear página web de bienvenida con estilo
+      copy:
+        dest: /var/www/html/index.html
+        content: |
+          <!DOCTYPE html>
+          <html lang="es">
+          <head>
+              <meta charset="UTF-8">
+              <meta name="viewport" content="width=device-width, initial-scale=1.0">
+              <title>Bienvenido a Vagrant</title>
+              <style>
+                  body {
+                      font-family: Arial, sans-serif;
+                      background-color: #f4f4f4;
+                      text-align: center;
+                      margin: 50px;
+                  }
+                  h1 {
+                      color: #333;
+                  }
+                  .container {
+                      background: white;
+                      padding: 20px;
+                      border-radius: 10px;
+                      box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+                      display: inline-block;
+                  }
+              </style>
+          </head>
+          <body>
+              <div class="container">
+                  <h1>🚀Servidor levantado en Ansible :D🎉</h1>
+                  <p>El servidor se encuentra funcionando correctamente</p>
+              </div>
+          </body>
+          </html>
+
+    - name: Configurar redirección del puerto 9091 al 80
+      lineinfile:
+        path: /etc/apache2/ports.conf
+        line: "Listen 80"
+        create: yes
+
+    - name: Reiniciar Apache para aplicar cambios
+      service:
+        name: apache2
+        state: restarted
