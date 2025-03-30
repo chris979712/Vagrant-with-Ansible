@@ -1,16 +1,36 @@
+## License
+
 # Vagrant-with-Ansible
 Actividad de la E.E Desarrollo de aplicaciones, en la cual se desarrollo la configuración de una máquina virtual a través de vagrant y de la ayuda de Ansible, para poder levantar un servidor; usando Ubuntu server 22.0.4
+Este repositorio contiene la configuración de una máquina virtual con **Vagrant** y **Ansible**, utilizada para levantar un servidor en **Ubuntu Server 22.04**.
 
-Requerimientos:
-Para poder ejecutar el proyecto, es necesario tener instalado Vagrant y Virtual Box (o cualquier otro virtualizador)
 
-Procedimiento de ejecución:
-1.- Clonar el repositorio
-2.- Abrir la línea de comandos en la ruta donde se encuentra el vagrantfile
-3.- Ejecutar el comando "vagrant up"
-4.- Ejecutar el comando "vagrant ssh" para poder abrir nuestra máquina virtual
-5.- Verificar si se realizó correctamente el aprovisionamiento, a través del chequeo de estado de nuestro servidor apache con el comando "systemctl status apache2"
-6.- Cerrar el chequeo del estado de servidor con "ctrl+c"
-7.- Obtener la ip públic de nuestro servidor ejecutando el comando "ip a"
-8.- En un navegador web escribir lo siguiente http://DireccionIPDelServidor:80
-9.- Disfruta :D
+## 🚀 Requerimientos  
+Para ejecutar este proyecto, necesitas instalar:  
+- [Vagrant](https://www.vagrantup.com/)  
+- [VirtualBox](https://www.virtualbox.org/)  
+
+---
+
+## 🔧 Pasos para ejecutar el proyecto
+
+1. **Clonar el repositorio**  
+   ```sh
+   git clone https://github.com/usuario/proyecto.git
+   cd proyecto
+
+2. **Iniciar la máquina virtual**
+   ```sh
+   vagrant up
+3. **Acceder a la máquina virtual**
+   ```sh
+   vagrant ssh
+4. **Verificar el estado de Apache**
+   ```sh
+   systemctl status apache2
+5. **Obtener la IP del servidor**
+   ```sh
+   ip a
+6. **Abrir un navegador y acceder a**
+   ```sh
+   ip a
